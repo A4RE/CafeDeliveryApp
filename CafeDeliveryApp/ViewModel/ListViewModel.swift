@@ -11,10 +11,13 @@ final class ListViewModel: ObservableObject {
     
     @Published var items: [ItemModel] = []
     @Published var alertItem: AlertModel?
+    @Published var isLoading: Bool = false
     
     func getData() {
+        isLoading = true
         NetworkManager.shared.getAppetizers { [self] result in
             DispatchQueue.main.async {
+                isLoading = false
                 switch result {
                 case .success(let items):
                     

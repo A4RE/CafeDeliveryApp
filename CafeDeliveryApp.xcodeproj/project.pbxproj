@@ -20,6 +20,7 @@
 		85D76F4F2AABC258003520A9 /* APError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D76F4E2AABC258003520A9 /* APError.swift */; };
 		85D76F512AABC9A0003520A9 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D76F502AABC9A0003520A9 /* ListViewModel.swift */; };
 		85D76F532AADB64A003520A9 /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D76F522AADB649003520A9 /* AlertModel.swift */; };
+		85D76F582AADBDF3003520A9 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D76F572AADBDF3003520A9 /* ColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		85D76F4E2AABC258003520A9 /* APError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APError.swift; sourceTree = "<group>"; };
 		85D76F502AABC9A0003520A9 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		85D76F522AADB649003520A9 /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
+		85D76F572AADBDF3003520A9 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 		85D76F2D2AABAF6E003520A9 /* CafeDeliveryApp */ = {
 			isa = PBXGroup;
 			children = (
+				85D76F562AADBDE8003520A9 /* Extensions */,
 				85D76F4B2AABC0C3003520A9 /* Network */,
 				85D76F3E2AABB017003520A9 /* Model */,
 				85D76F3C2AABB009003520A9 /* View */,
@@ -124,6 +127,14 @@
 				85D76F4E2AABC258003520A9 /* APError.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		85D76F562AADBDE8003520A9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				85D76F572AADBDF3003520A9 /* ColorExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +218,7 @@
 				85D76F442AABB108003520A9 /* CartView.swift in Sources */,
 				85D76F532AADB64A003520A9 /* AlertModel.swift in Sources */,
 				85D76F2F2AABAF6E003520A9 /* CafeDeliveryAppApp.swift in Sources */,
+				85D76F582AADBDF3003520A9 /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

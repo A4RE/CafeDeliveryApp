@@ -13,23 +13,28 @@ struct HomeView: View {
     
     var body: some View {
         
-        List {
-            ForEach(viewModel.items) { item in
-                ListItemView(item: item)
+        ZStack {
+            List {
+                ForEach(viewModel.items) { item in
+                    ListItemView(item: item)
+                }
             }
-        }
-        .listStyle(.plain)
-        .navigationTitle("Cafe List")
-        .onAppear{
-            viewModel.getData()
+            .listStyle(.plain)
+            .navigationTitle("Cafe List")
+            .onAppear{
+                viewModel.getData()
+            }
+            if viewModel.isLoading {
+                ProgressView()
+                    .tint(.TabBarColor)
+            }
         }
         .alert(item: $viewModel.alertItem) { alert in
             Alert(title: alert.title,
                   message: alert.message,
-                  dismissButton: alert.dismissButton )
+                  dismissButton: alert.dismissButton)
         }
     }
-
 }
 
 struct HomeView_Previews: PreviewProvider {

@@ -26,7 +26,7 @@ struct TabBarView: View {
                     Text("Profile")
                 }
         }
-        .tint(Color("TabBarColor"))
+        .tint(.TabBarColor)
     }
 }
 
