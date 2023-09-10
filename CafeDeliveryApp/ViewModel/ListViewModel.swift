@@ -12,6 +12,8 @@ final class ListViewModel: ObservableObject {
     @Published var items: [ItemModel] = []
     @Published var alertItem: AlertModel?
     @Published var isLoading: Bool = false
+    @Published var isShowDetailView: Bool = false
+    @Published var selectedItem: ItemModel?
     
     func getData() {
         isLoading = true

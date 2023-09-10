@@ -10,8 +10,8 @@ import SwiftUI
 struct HomeView: View {
     
     @StateObject var viewModel: ListViewModel = ListViewModel()
-    @State private var isShowDetailView: Bool = false
-    @State private var selectedItem: ItemModel?
+//    @State private var isShowDetailView: Bool = false
+//    @State private var selectedItem: ItemModel?
     
     var body: some View {
         
@@ -19,20 +19,20 @@ struct HomeView: View {
             List(viewModel.items) { item in
                 ListItemView(item: item)
                     .onTapGesture {
-                        selectedItem = item
-                        isShowDetailView = true
+                        viewModel.selectedItem = item
+                        viewModel.isShowDetailView = true
                     }
             }
-            .disabled(isShowDetailView ? true : false)
+            .disabled(viewModel.isShowDetailView ? true : false)
             .navigationTitle("Cafe List")
             .listStyle(.plain)
             .onAppear{
                 viewModel.getData()
             }
-            .blur(radius: isShowDetailView ? 50 : 0)
+            .blur(radius: viewModel.isShowDetailView ? 50 : 0)
             
-            if isShowDetailView {
-                DetailItemView(isShowDetailView: $isShowDetailView, item: selectedItem ?? MockData.sampleItem)
+            if viewModel.isShowDetailView {
+                DetailItemView(isShowDetailView: $viewModel.isShowDetailView, item: viewModel.selectedItem ?? MockData.sampleItem)
             }
             
             if viewModel.isLoading {
