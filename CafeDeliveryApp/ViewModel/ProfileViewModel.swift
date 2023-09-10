@@ -8,23 +8,19 @@
 import SwiftUI
 
 final class ProfileViewModel: ObservableObject {
-    @Published var firstName: String = ""
-    @Published var lastName: String = ""
-    @Published var email: String = ""
-    @Published var birthday: Date = Date()
-    @Published var extraNapkins: Bool = false
-    @Published var frequentRefills: Bool = false
     
+    @AppStorage("user") private var userData: Data?
+    @Published var user: UserModel = UserModel()
     @Published var alertItem: AlertModel?
     
     var isValidForm: Bool {
-        guard !firstName.isEmpty && !lastName.isEmpty && !email.isEmpty else {
+        guard !user.firstName.isEmpty && !user.lastName.isEmpty && !user.email.isEmpty else {
             alertItem = AlertContext.invalidForm
             return false
             
         }
         
-        guard email.isValidEmail else {
+        guard user.email.isValid() else {
             alertItem = AlertContext.invalidEmail
             return false
             
@@ -37,6 +33,21 @@ final class ProfileViewModel: ObservableObject {
         guard isValidForm else {
             return
         }
-        print("Changes has been changed successfully")
+        do {
+            let data = try JSONEncoder().encode(user)
+            userData = data
+            alertItem = AlertContext.userSaveSuccess
+        } catch {
+            alertItem = AlertContext.invalidUserData
+        }
+    }
+    
+    func retrieveUser() {
+        guard let userData = userData else { return }
+        do {
+            user = try JSONDecoder().decode(UserModel.self, from: userData)
+        } catch {
+            alertItem = AlertContext.invalidUserData
+        }
     }
 }

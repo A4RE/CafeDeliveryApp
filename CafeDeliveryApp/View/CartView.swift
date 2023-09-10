@@ -9,7 +9,16 @@ import SwiftUI
 
 struct CartView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            VStack {
+                List {
+                    ForEach(MockData.orderItems) { orderItem in
+                        ListItemView(item: orderItem)
+                    }
+                }
+            }
+            .navigationTitle("Cart")
+        }
     }
 }
 

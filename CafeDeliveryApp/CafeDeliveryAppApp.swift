@@ -11,9 +11,7 @@ import SwiftUI
 struct CafeDeliveryAppApp: App {
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
-                TabBarView()
-            }
+            TabBarView()
         }
     }
 }

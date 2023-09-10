@@ -15,13 +15,13 @@ struct ProfileView: View {
         NavigationStack {
             Form {
                 Section {
-                    TextField("First name", text: $viewModel.firstName)
-                    TextField("Last name", text: $viewModel.lastName)
-                    TextField("Email", text: $viewModel.email)
+                    TextField("First name", text: $viewModel.user.firstName)
+                    TextField("Last name", text: $viewModel.user.lastName)
+                    TextField("Email", text: $viewModel.user.email)
                         .keyboardType(.emailAddress)
-                        .textInputAutocapitalization(.none)
-                        .disableAutocorrection(false)
-                    DatePicker("Birthday", selection: $viewModel.birthday, displayedComponents: .date)
+                        .autocapitalization(.none)
+                        .disableAutocorrection(true)
+                    DatePicker("Birthday", selection: $viewModel.user.birthday, displayedComponents: .date)
                         .tint(.TabBarColor)
                     Button("Save changes") {
                         viewModel.saveChanges()
@@ -32,18 +32,21 @@ struct ProfileView: View {
                 }
                 
                 Section {
-                    Toggle("Extra Napkins", isOn: $viewModel.extraNapkins)
-                        
-                    Toggle("Frequent Refills", isOn: $viewModel.frequentRefills)
-                        
+                    Toggle("Extra Napkins", isOn: $viewModel.user.extraNapkins)
+                    
+                    Toggle("Frequent Refills", isOn: $viewModel.user.frequentRefills)
+                    
                 } header: {
                     Text("Requests")
                 }
                 .toggleStyle(.switch)
                 .tint(.TabBarColor)
-
+                
             }
             .navigationTitle("Profile")
+        }
+        .onAppear{
+            viewModel.retrieveUser()
         }
         .alert(item: $viewModel.alertItem) { alertItem in
             Alert(title: alertItem.title,

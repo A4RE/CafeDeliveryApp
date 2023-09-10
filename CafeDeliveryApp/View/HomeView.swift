@@ -15,35 +15,37 @@ struct HomeView: View {
     
     var body: some View {
         
-        ZStack {
-            List(viewModel.items) { item in
-                ListItemView(item: item)
-                    .onTapGesture {
-                        viewModel.selectedItem = item
-                        viewModel.isShowDetailView = true
-                    }
+        NavigationStack {
+            ZStack {
+                List(viewModel.items) { item in
+                    ListItemView(item: item)
+                        .onTapGesture {
+                            viewModel.selectedItem = item
+                            viewModel.isShowDetailView = true
+                        }
+                }
+                .disabled(viewModel.isShowDetailView ? true : false)
+                .navigationTitle("Cafe List")
+                .listStyle(.plain)
+                .onAppear{
+                    viewModel.getData()
+                }
+                .blur(radius: viewModel.isShowDetailView ? 50 : 0)
+                
+                if viewModel.isShowDetailView {
+                    DetailItemView(isShowDetailView: $viewModel.isShowDetailView, item: viewModel.selectedItem ?? MockData.sampleItem)
+                }
+                
+                if viewModel.isLoading {
+                    ProgressView()
+                        .tint(.TabBarColor)
+                }
             }
-            .disabled(viewModel.isShowDetailView ? true : false)
-            .navigationTitle("Cafe List")
-            .listStyle(.plain)
-            .onAppear{
-                viewModel.getData()
-            }
-            .blur(radius: viewModel.isShowDetailView ? 50 : 0)
-            
-            if viewModel.isShowDetailView {
-                DetailItemView(isShowDetailView: $viewModel.isShowDetailView, item: viewModel.selectedItem ?? MockData.sampleItem)
-            }
-            
-            if viewModel.isLoading {
-                ProgressView()
-                    .tint(.TabBarColor)
-            }
+            .alert(item: $viewModel.alertItem) { alert in
+                Alert(title: alert.title,
+                      message: alert.message,
+                      dismissButton: alert.dismissButton)
         }
-        .alert(item: $viewModel.alertItem) { alert in
-            Alert(title: alert.title,
-                  message: alert.message,
-                  dismissButton: alert.dismissButton)
         }
     }
 }
