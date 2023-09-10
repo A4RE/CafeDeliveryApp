@@ -9,23 +9,23 @@ import SwiftUI
 
 struct CartView: View {
     
-    @State private var orderItems = MockData.orderItems
+    @EnvironmentObject var order: Order
     
     var body: some View {
         NavigationStack {
             ZStack {
                 VStack {
                     List {
-                        ForEach(orderItems) { orderItem in
+                        ForEach(order.items) { orderItem in
                             ListItemView(item: orderItem)
                         }
-                        .onDelete(perform: deleteItems)
+                        .onDelete(perform: order.deleteItems)
                     }
                     .listStyle(.plain)
                     Button {
                         print("Order placed")
                     } label: {
-                        Text("$99.99 - Place Order")
+                        Text("$\(order.totalPrice, specifier: "%.2f") - Place Order")
                             .font(.title3)
                             .fontWeight(.semibold)
                             .foregroundColor(.white)
@@ -38,16 +38,13 @@ struct CartView: View {
                     .padding(.bottom, 20)
 
                 }
-                if orderItems.isEmpty {
+                if order.items.isEmpty {
                     EmptyCartView(systemImageName: "clipboard",
                                   title: "You have no items in your cart!\nPlease add an item")
                 }
             }
             .navigationTitle("Cart")
         }
-    }
-    func deleteItems(indexSet: IndexSet) {
-        orderItems.remove(atOffsets: indexSet)
     }
 }
 

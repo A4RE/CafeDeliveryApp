@@ -9,6 +9,8 @@ import SwiftUI
 
 struct DetailItemView: View {
     
+    @EnvironmentObject var order: Order
+    
     @Binding var isShowDetailView: Bool
     
     let item: ItemModel
@@ -57,7 +59,8 @@ struct DetailItemView: View {
             }
             Spacer()
             Button {
-                
+                order.add(item)
+                isShowDetailView = false
             } label: {
                 Text("$\(item.price, specifier: "%.2f") - Add to cart")
                     .font(.title3)

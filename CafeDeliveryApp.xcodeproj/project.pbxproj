@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		85230F2F2AAE388800FB2D06 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85230F2E2AAE388800FB2D06 /* UserModel.swift */; };
 		85230F312AAE4B6D00FB2D06 /* EmptyCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85230F302AAE4B6D00FB2D06 /* EmptyCartView.swift */; };
+		85230F332AAE4FB200FB2D06 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85230F322AAE4FB200FB2D06 /* OrderModel.swift */; };
 		857E0FEB2AADDFA400C70702 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857E0FEA2AADDFA400C70702 /* ProfileViewModel.swift */; };
 		857E0FED2AADE0E400C70702 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857E0FEC2AADE0E400C70702 /* StringExtension.swift */; };
 		85D76F2F2AABAF6E003520A9 /* CafeDeliveryAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D76F2E2AABAF6E003520A9 /* CafeDeliveryAppApp.swift */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		85230F2E2AAE388800FB2D06 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		85230F302AAE4B6D00FB2D06 /* EmptyCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCartView.swift; sourceTree = "<group>"; };
+		85230F322AAE4FB200FB2D06 /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
 		857E0FEA2AADDFA400C70702 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		857E0FEC2AADE0E400C70702 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		85D76F2B2AABAF6E003520A9 /* CafeDeliveryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CafeDeliveryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +135,7 @@
 				85D76F472AABB5BF003520A9 /* ItemModel.swift */,
 				85D76F522AADB649003520A9 /* AlertModel.swift */,
 				85230F2E2AAE388800FB2D06 /* UserModel.swift */,
+				85230F322AAE4FB200FB2D06 /* OrderModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				85D76F532AADB64A003520A9 /* AlertModel.swift in Sources */,
 				85D76F2F2AABAF6E003520A9 /* CafeDeliveryAppApp.swift in Sources */,
 				85D76F5C2AADCC96003520A9 /* DetailItemView.swift in Sources */,
+				85230F332AAE4FB200FB2D06 /* OrderModel.swift in Sources */,
 				85D76F582AADBDF3003520A9 /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
