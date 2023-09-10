@@ -21,6 +21,7 @@
 		85D76F512AABC9A0003520A9 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D76F502AABC9A0003520A9 /* ListViewModel.swift */; };
 		85D76F532AADB64A003520A9 /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D76F522AADB649003520A9 /* AlertModel.swift */; };
 		85D76F582AADBDF3003520A9 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D76F572AADBDF3003520A9 /* ColorExtension.swift */; };
+		85D76F5A2AADC6BF003520A9 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D76F592AADC6BF003520A9 /* RemoteImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		85D76F502AABC9A0003520A9 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		85D76F522AADB649003520A9 /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
 		85D76F572AADBDF3003520A9 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		85D76F592AADC6BF003520A9 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				85D76F502AABC9A0003520A9 /* ListViewModel.swift */,
+				85D76F592AADC6BF003520A9 /* RemoteImage.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				85D76F4A2AABBFE8003520A9 /* ListItemView.swift in Sources */,
 				85D76F402AABB049003520A9 /* HomeView.swift in Sources */,
 				85D76F422AABB0A8003520A9 /* TabBarView.swift in Sources */,
+				85D76F5A2AADC6BF003520A9 /* RemoteImage.swift in Sources */,
 				85D76F4D2AABC0D0003520A9 /* NetworkManager.swift in Sources */,
 				85D76F462AABB113003520A9 /* ProfileView.swift in Sources */,
 				85D76F442AABB108003520A9 /* CartView.swift in Sources */,

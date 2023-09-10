@@ -14,13 +14,11 @@ struct HomeView: View {
     var body: some View {
         
         ZStack {
-            List {
-                ForEach(viewModel.items) { item in
-                    ListItemView(item: item)
-                }
+            List(viewModel.items) { item in
+                ListItemView(item: item)
             }
-            .listStyle(.plain)
             .navigationTitle("Cafe List")
+            .listStyle(.plain)
             .onAppear{
                 viewModel.getData()
             }
@@ -29,6 +27,7 @@ struct HomeView: View {
                     .tint(.TabBarColor)
             }
         }
+        .toolbar(.visible, for: .navigationBar)
         .alert(item: $viewModel.alertItem) { alert in
             Alert(title: alert.title,
                   message: alert.message,

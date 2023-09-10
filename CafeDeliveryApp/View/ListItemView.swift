@@ -14,8 +14,7 @@ struct ListItemView: View {
     
     var body: some View {
         HStack(spacing: 20) {
-            Image(item.imageURL)
-                .resizable()
+            ItemRemoteImage(urlString: item.imageURL)
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 120, height: 90)
                 .cornerRadius(10)
