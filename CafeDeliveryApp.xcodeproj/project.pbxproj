@@ -22,6 +22,7 @@
 		85D76F532AADB64A003520A9 /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D76F522AADB649003520A9 /* AlertModel.swift */; };
 		85D76F582AADBDF3003520A9 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D76F572AADBDF3003520A9 /* ColorExtension.swift */; };
 		85D76F5A2AADC6BF003520A9 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D76F592AADC6BF003520A9 /* RemoteImage.swift */; };
+		85D76F5C2AADCC96003520A9 /* DetailItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D76F5B2AADCC96003520A9 /* DetailItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		85D76F522AADB649003520A9 /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
 		85D76F572AADBDF3003520A9 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		85D76F592AADC6BF003520A9 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
+		85D76F5B2AADCC96003520A9 /* DetailItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				85D76F432AABB108003520A9 /* CartView.swift */,
 				85D76F452AABB113003520A9 /* ProfileView.swift */,
 				85D76F492AABBFE8003520A9 /* ListItemView.swift */,
+				85D76F5B2AADCC96003520A9 /* DetailItemView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				85D76F442AABB108003520A9 /* CartView.swift in Sources */,
 				85D76F532AADB64A003520A9 /* AlertModel.swift in Sources */,
 				85D76F2F2AABAF6E003520A9 /* CafeDeliveryAppApp.swift in Sources */,
+				85D76F5C2AADCC96003520A9 /* DetailItemView.swift in Sources */,
 				85D76F582AADBDF3003520A9 /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,24 +10,36 @@ import SwiftUI
 struct HomeView: View {
     
     @StateObject var viewModel: ListViewModel = ListViewModel()
+    @State private var isShowDetailView: Bool = false
+    @State private var selectedItem: ItemModel?
     
     var body: some View {
         
         ZStack {
             List(viewModel.items) { item in
                 ListItemView(item: item)
+                    .onTapGesture {
+                        selectedItem = item
+                        isShowDetailView = true
+                    }
             }
+            .disabled(isShowDetailView ? true : false)
             .navigationTitle("Cafe List")
             .listStyle(.plain)
             .onAppear{
                 viewModel.getData()
             }
+            .blur(radius: isShowDetailView ? 50 : 0)
+            
+            if isShowDetailView {
+                DetailItemView(isShowDetailView: $isShowDetailView, item: selectedItem ?? MockData.sampleItem)
+            }
+            
             if viewModel.isLoading {
                 ProgressView()
                     .tint(.TabBarColor)
             }
         }
-        .toolbar(.visible, for: .navigationBar)
         .alert(item: $viewModel.alertItem) { alert in
             Alert(title: alert.title,
                   message: alert.message,
