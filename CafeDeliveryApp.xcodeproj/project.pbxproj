@@ -132,6 +132,7 @@
 		85D76F3E2AABB017003520A9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				85D76F4E2AABC258003520A9 /* APError.swift */,
 				85D76F472AABB5BF003520A9 /* ItemModel.swift */,
 				85D76F522AADB649003520A9 /* AlertModel.swift */,
 				85230F2E2AAE388800FB2D06 /* UserModel.swift */,
@@ -144,7 +145,6 @@
 			isa = PBXGroup;
 			children = (
 				85D76F4C2AABC0D0003520A9 /* NetworkManager.swift */,
-				85D76F4E2AABC258003520A9 /* APError.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";

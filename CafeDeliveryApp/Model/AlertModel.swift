@@ -47,4 +47,7 @@ struct AlertContext {
     static let invalidUserData = AlertModel(title: Text("Profile Error"),
                                              message: Text("There was an error saving or retrieving your profile."),
                                              dismissButton: .default(Text("OK")))
+    static let genericError = AlertModel(title: Text("Unable to complete your request"),
+                                             message: Text("We're unable to complete your request, check your internet connection or try again later"),
+                                             dismissButton: .default(Text("OK")))
 }

@@ -10,14 +10,28 @@ import SwiftUI
 struct ProfileView: View {
     
     @StateObject var viewModel: ProfileViewModel = ProfileViewModel()
+    @FocusState private var focusTextField: FormTextField?
+    
+    enum FormTextField {
+        case firstName, lastName, email
+    }
     
     var body: some View {
         NavigationStack {
             Form {
                 Section {
                     TextField("First name", text: $viewModel.user.firstName)
+                        .focused($focusTextField, equals: .firstName)
+                        .onSubmit { focusTextField = .lastName }
+                        .submitLabel(.next)
                     TextField("Last name", text: $viewModel.user.lastName)
+                        .focused($focusTextField, equals: .lastName)
+                        .onSubmit { focusTextField = .email }
+                        .submitLabel(.next)
                     TextField("Email", text: $viewModel.user.email)
+                        .focused($focusTextField, equals: .email)
+                        .onSubmit { focusTextField = nil }
+                        .submitLabel(.done)
                         .keyboardType(.emailAddress)
                         .autocapitalization(.none)
                         .disableAutocorrection(true)
@@ -44,6 +58,11 @@ struct ProfileView: View {
                 
             }
             .navigationTitle("Profile")
+            .toolbar {
+                ToolbarItemGroup(placement: .keyboard) {
+                    Button("Dismiss") { focusTextField = nil }
+                }
+            }
         }
         .onAppear{
             viewModel.retrieveUser()

@@ -8,22 +8,23 @@
 import SwiftUI
 
 struct TabBarView: View {
+    
+    @EnvironmentObject var order: Order
+    
     var body: some View {
         TabView {
             HomeView()
                 .tabItem {
-                    Image(systemName: "house")
-                    Text("Home")
+                    Label("Home", systemImage: "house")
                 }
             CartView()
                 .tabItem {
-                    Image(systemName: "cart")
-                    Text("Cart")
+                    Label("Cart", systemImage: "cart")
                 }
+                .badge(order.items.count)
             ProfileView()
                 .tabItem {
-                    Image(systemName: "person")
-                    Text("Profile")
+                    Label("Profile", systemImage: "person")
                 }
         }
         .tint(.TabBarColor)

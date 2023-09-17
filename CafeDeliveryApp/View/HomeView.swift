@@ -19,6 +19,7 @@ struct HomeView: View {
             ZStack {
                 List(viewModel.items) { item in
                     ListItemView(item: item)
+//                        .listRowSeparator(.hidden)
                         .onTapGesture {
                             viewModel.selectedItem = item
                             viewModel.isShowDetailView = true
@@ -27,7 +28,7 @@ struct HomeView: View {
                 .disabled(viewModel.isShowDetailView ? true : false)
                 .navigationTitle("Cafe List")
                 .listStyle(.plain)
-                .onAppear{
+                .task {
                     viewModel.getData()
                 }
                 .blur(radius: viewModel.isShowDetailView ? 50 : 0)
